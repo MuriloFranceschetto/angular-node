@@ -1,0 +1,10 @@
+
+<div class="alinhamento container">
+    <div>
+        <h2>Você está na Home do site</h2>
+    </div>
+    <div *ngIf="authService.conteudoHome">
+        <h3>Faça seu Login!!!</h3>
+        <button mat-raised-button routerLink="/login">Login</button>
+    </div>
+</div>
