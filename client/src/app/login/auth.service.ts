@@ -31,7 +31,7 @@ export class AuthService {
               public local: LocalStorageService,
               public session: SessionStorageService) {
 
-                this.dados = localStorage.getItem('login');                
+                this.dados = localStorage.getItem('login');
                }
 
   validarLogin(formLogin) {
