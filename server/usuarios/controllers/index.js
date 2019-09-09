@@ -6,5 +6,8 @@ var express = require('express'),
 
 router.post('/', controller.cadUsuario);
 router.get('/', controller.getAllUsuarios);
+router.get('/:id', controller.getById);
+// router.put('/:id', controller.editarUsuario);
+router.delete('/:id', controller.deleteUsuario);
 
 module.exports = router;

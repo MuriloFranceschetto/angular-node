@@ -14,9 +14,6 @@
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="Digite seu Email"
                         type="text" id="email" formControlName="email" >
-                <mat-error *ngIf="email.invalid">
-                    é preciso de um email para se cadastrar!
-                </mat-error>
             </mat-form-field>
         </div>
     
@@ -24,9 +21,7 @@
             <mat-form-field class="example-full-width">
                 <input  matInput placeholder="Digite sua senha"
                      type="password" id="senha" formControlName="senha">
-                <mat-error *ngIf="senha.invalid">
-                    É preciso inserir uma senha para se cadastrar!
-                </mat-error>        
+                      
             </mat-form-field>
         </div>
 
@@ -34,10 +29,10 @@
             <mat-form-field class="example-full-width">
                 <input  matInput placeholder="Digite seu nome"
                      type="text" id="nome" formControlName="nome">
-                <mat-error *ngIf="nome.invalid">
-                    É preciso inserir um nome para se cadastrar!
-                </mat-error>        
+                   
             </mat-form-field>
         </div>
+        <button mat-raised-button ng-submit="cadUsuario">Cadastrar-se</button>
+
     </form>
 </div>

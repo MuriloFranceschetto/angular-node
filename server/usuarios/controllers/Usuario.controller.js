@@ -15,9 +15,30 @@ exports.cadUsuario = async(req, res) => {
         return res.json(usuario);
 };
 
-exports.getAllUsuarios = async(req, res) => {
+exports.getAllUsuarios = (req, res) => {
     Usuario.find({})
     .then(
         (usuario) => res.json(usuario)
     )
 }
+
+exports.getById = (req, res) => {
+    Usuario.findById(req.params.id)
+    .then(
+        (usuario) => res.json(usuario)
+    )
+}
+
+exports.deleteUsuario = async (req, res) => {
+    var usuario = await Usuario.findByIdAndRemove(
+        req.params.id
+    )
+    return res.status(200);
+}
+// exports.editarUsuario = async(req, res) => {
+//     var usuario = await Usuario.findByIdAndUpdate(
+//         req.params.id,
+//         usuario = req.body
+//     )
+//     return usuario;
+// }
