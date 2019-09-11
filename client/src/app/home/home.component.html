@@ -1,38 +1,16 @@
 
-<div class="alinhamento container">
-    <div>
+<div>
+    <div class="alinhamento container">
         <h2>Você está na Home do site</h2>
     </div>
-    <div *ngIf="authService.conteudoHome">
+
+    <div *ngIf="authService.conteudoHome" style="width: 50%; float: left" class="alinhamento container">
         <h3>Faça seu Login!!!</h3>
         <button mat-raised-button routerLink="/login">Login</button>
     </div>
 
-    <form [formGroup]="formCadastroUsuario">
-        <h2>Cadastre-se</h2>
-        <div>
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Digite seu Email"
-                        type="text" id="email" formControlName="email" >
-            </mat-form-field>
-        </div>
-    
-        <div>
-            <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Digite sua senha"
-                     type="password" id="senha" formControlName="senha">
-                      
-            </mat-form-field>
-        </div>
-
-        <div>
-            <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Digite seu nome"
-                     type="text" id="nome" formControlName="nome">
-                   
-            </mat-form-field>
-        </div>
-        <button mat-raised-button ng-submit="cadUsuario">Cadastrar-se</button>
-
-    </form>
+    <div *ngIf="authService.conteudoHome" style="width: 50%; float: left" class="alinhamento container">
+        <h3>Faça seu Cadastro!!!</h3>
+        <button mat-raised-button routerLink="/cadastroUsuario">Cadastrar-se</button>
+    </div>
 </div>

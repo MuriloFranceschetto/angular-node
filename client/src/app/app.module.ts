@@ -28,6 +28,7 @@ import { PaginaAcessadaComponent } from './pagina-acessada/pagina-acessada.compo
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AngularWebStorageModule } from 'angular-web-storage';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PaginaAcessadaComponent
+    PaginaAcessadaComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     FormsModule,

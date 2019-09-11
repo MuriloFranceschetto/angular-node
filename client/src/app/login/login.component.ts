@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   validarLogin() {
-    this.authService.validarLogin(this.formLogin);
+    this.authService.validarLogin(this.formLogin.getRawValue());
   }
   
   MostrarLoginHome() {

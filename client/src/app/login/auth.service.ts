@@ -1,4 +1,4 @@
-
+import { HttpClient } from '@angular/common/http';
 import { Injectable, NgModule, EventEmitter } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -29,7 +29,8 @@ export class AuthService {
 
   constructor(private router: Router,
               public local: LocalStorageService,
-              public session: SessionStorageService) {
+              public session: SessionStorageService,
+              public http: HttpClient) {
 
                 this.dados = localStorage.getItem('login');
                }
