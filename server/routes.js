@@ -1,6 +1,6 @@
 
 // Todas as ações relacionada com a rotas de Usuarios
 module.exports = (app) => {
-    app.use('/api/usuario', require('./usuarios/controllers'));
+    app.use('/api/usuario', require('./api/usuarios/controllers'));
 };
   

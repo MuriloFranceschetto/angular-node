@@ -8,18 +8,11 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 const API = 'http://localhost:3000/api/';
+
 @Injectable({
   providedIn: 'root'
 })
-
-@NgModule({
-  imports: [
-    PaginaAcessadaComponent
-  ],
-})
-
-
-export class AuthService {
+export class LoginService {
 
   private validacao = false;
   public dados;
@@ -44,18 +37,6 @@ export class AuthService {
 
     return new Promise((resolve, reject) => this.http.get(`${API}usuario`, data)
         .toPromise().then(res => resolve(res), error => reject(error)));
-  }
-
-  setToken(data: any) {
-
-  }
-
-  setCredentials(data: any) {
-
-  }
-
-  setPermissao() {
-
   }
 
   salvaValorAcessado() {
@@ -92,5 +73,4 @@ export class AuthService {
     console.log('VAI PRA HOME');
     this.router.navigate(['/']);
   }
-
 }

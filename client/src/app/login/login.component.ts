@@ -1,9 +1,10 @@
+import { LoginService } from './login.service';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthService } from './../services/auth.service';
 import { FormControl, Validators, FormGroup} from '@angular/forms';
-import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +16,10 @@ export class LoginComponent implements OnInit {
   public formLogin: FormGroup;
 
   constructor(
-      private authService: AuthService,
-      private router: Router
-    ) { 
- 
-      }  
+      private loginService: LoginService,
+      private router: Router,
+      private authService: AuthService
+    ) { }  
  
   ngOnInit() {
     this.formLogin = new FormGroup({
@@ -41,12 +41,12 @@ export class LoginComponent implements OnInit {
   }
 
   validarLogin() {
-      this.authService.validarLogin(this.formLogin.value)
+      this.loginService.validarLogin(this.formLogin.value)
           .then((response: object) => {
               if (response) {
                   this.authService.setToken(response);
                   this.authService.setCredentials(response);
-                  this.router.navigate(['pages/dashboard']);
+                  this.router.navigate(['/paginaAcessada']);
               } else {
                 console.log('Usuario ou senha incorretos');
               }
@@ -57,11 +57,11 @@ export class LoginComponent implements OnInit {
   }
   
   MostrarLoginHome() {
-    this.authService.MostrarLoginHome();
+    this.loginService.MostrarLoginHome();
   }
 
   voltarHome() {
-    this.authService.voltarHome();
+    this.loginService.voltarHome();
   }
 
 }

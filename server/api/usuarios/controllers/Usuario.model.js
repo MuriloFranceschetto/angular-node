@@ -1,6 +1,6 @@
 'use strict'
 
-const mongoose = require('../../config/database');
+const mongoose = require('../../../config/database');
 
 const Usuario = mongoose.model('Usuario');
 

@@ -25,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PaginaAcessadaComponent } from './pagina-acessada/pagina-acessada.component';
-import { AuthService } from './login/auth.service';
+import { LoginService } from './login/login.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
@@ -60,7 +60,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     HttpModule,
     MatSnackBarModule
   ],
-  providers: [AuthService, AuthGuard, Validators],
+  providers: [LoginService, AuthGuard, Validators],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

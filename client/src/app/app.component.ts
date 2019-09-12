@@ -1,5 +1,5 @@
 import { AuthGuard } from './guards/auth-guard';
-import { AuthService } from './login/auth.service';
+import { LoginService } from './login/login.service';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 
@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
 
   constructor(changeDetectorRef: ChangeDetectorRef,
               media: MediaMatcher,
-              public authService: AuthService,
-              public uthGuard: AuthGuard) {
+              public loginService: LoginService,
+              public authGuard: AuthGuard) {
 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.MobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.salvaValorAcessado();
+    this.loginService.salvaValorAcessado();
   }
 
   ngOnDestroy(): void {
@@ -38,11 +38,11 @@ export class AppComponent implements OnInit {
   }
 
   deslogar() {
-    this.authService.deslogar();
+    this.loginService.deslogar();
   }
 
   MostrarLoginHome() {
-    this.authService.MostrarLoginHome();
+    this.loginService.MostrarLoginHome();
   }
 
   shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));

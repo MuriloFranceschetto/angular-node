@@ -1,7 +1,7 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from './../login/auth.service';
+import { LoginService } from './../login/login.service';
 import { CadastroUsuarioService } from './cadastro-usuario.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class CadastroUsuarioComponent implements OnInit {
 
   constructor(
     private cadastroUsuarioService: CadastroUsuarioService,
-    private authService: AuthService
+    private loginService: LoginService
   ) { }
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   voltarHome() {
-    this.authService.voltarHome();
+    this.loginService.voltarHome();
   }
 
   cadUsuario() {
