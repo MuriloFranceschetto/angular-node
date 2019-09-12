@@ -16,4 +16,5 @@ export class CadastroUsuarioService {
       return new Promise((resolve, reject) => this.http.post(`${API}usuario`, data)
           .toPromise().then(res => resolve(res), error => reject(error)));
   }
+
 }

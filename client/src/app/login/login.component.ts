@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FormControl, Validators, FormGroup} from '@angular/forms';
 import { AuthService } from './auth.service';
@@ -13,7 +14,9 @@ export class LoginComponent implements OnInit {
 
   public formLogin: FormGroup;
 
-  constructor(private authService: AuthService
+  constructor(
+      private authService: AuthService,
+      private router: Router
     ) { 
  
       }  
@@ -38,7 +41,19 @@ export class LoginComponent implements OnInit {
   }
 
   validarLogin() {
-    this.authService.validarLogin(this.formLogin.getRawValue());
+      this.authService.validarLogin(this.formLogin.value)
+          .then((response: object) => {
+              if (response) {
+                  this.authService.setToken(response);
+                  this.authService.setCredentials(response);
+                  this.router.navigate(['pages/dashboard']);
+              } else {
+                console.log('Usuario ou senha incorretos');
+              }
+          }).catch((err) => {
+              console.log('Usuario ou senha incorretos');
+          });
+  
   }
   
   MostrarLoginHome() {

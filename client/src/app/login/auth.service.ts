@@ -4,8 +4,10 @@ import { Injectable, NgModule, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { PaginaAcessadaComponent } from './../pagina-acessada/pagina-acessada.component';
 import { LocalStorageService, SessionStorageService } from 'angular-web-storage';
+import { CookieService } from 'ngx-cookie-service';
 
 
+const API = 'http://localhost:3000/api/';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +17,7 @@ import { LocalStorageService, SessionStorageService } from 'angular-web-storage'
     PaginaAcessadaComponent
   ],
 })
+
 
 export class AuthService {
 
@@ -35,28 +38,24 @@ export class AuthService {
                 this.dados = localStorage.getItem('login');
                }
 
-  validarLogin(formLogin) {
-    if (formLogin.value.email === 'usuario@gmail.com' &&
-        formLogin.value.senha === '123') {
-      this.validacao = true;
-      this.apareceErro = false;
+  validarLogin(data?: any) {
+    
+    console.log('Buscou');
 
-      localStorage.setItem('login', JSON.stringify(formLogin['value']));
-      
-      console.log('VALIDACAO GANHA TRUE E SALVA NO LOCALSTORAGE');
-    } else {
-      this.validacao = false;
-      this.apareceErro = true;
-      console.log('APARECE ERRO')
-    }
-        
-    if (this.validacao === true) {
-      this.visible = true;
-      this.router.navigate(['/paginaAcessada']);
-      console.log('VAI PRA PAGINA ACESSADA');
-    } else {
-      this.visible = false;
-    }
+    return new Promise((resolve, reject) => this.http.get(`${API}usuario`, data)
+        .toPromise().then(res => resolve(res), error => reject(error)));
+  }
+
+  setToken(data: any) {
+
+  }
+
+  setCredentials(data: any) {
+
+  }
+
+  setPermissao() {
+
   }
 
   salvaValorAcessado() {
