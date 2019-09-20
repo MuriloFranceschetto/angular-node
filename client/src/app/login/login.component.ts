@@ -39,11 +39,12 @@ export class LoginComponent implements OnInit {
   get senha() {
       return this.formLogin.get('senha');
   }
-
-  validarLogin() {
+  
+  validarLogin(response, err) {
       this.loginService.validarLogin(this.formLogin.value)
           .then((response: object) => {
               if (response) {
+                  console.log(response)
                   this.authService.setToken(response);
                   this.authService.setCredentials(response);
                   this.router.navigate(['/paginaAcessada']);

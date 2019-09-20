@@ -27,9 +27,7 @@ export class CadastroUsuarioComponent implements OnInit {
       senha: new FormControl('', 
       Validators.required
       ),
-      nome: new FormControl('',
-      Validators.required
-      )
+      nome: new FormControl('', null)
     })
   }
 

@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { CookieService } from 'ngx-cookie-service';
 
 // ANGULAR MATERIAL
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -37,7 +38,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     LoginComponent,
     HomeComponent,
     PaginaAcessadaComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
   ],
   imports: [
     FormsModule,
@@ -58,9 +59,10 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     AngularWebStorageModule,
     HttpClientModule,
     HttpModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    
   ],
-  providers: [LoginService, AuthGuard, Validators],
+  providers: [LoginService, AuthGuard, Validators, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

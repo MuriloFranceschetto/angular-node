@@ -33,9 +33,9 @@ export class LoginService {
 
   validarLogin(data?: any) {
     
-    console.log('Buscou');
+    console.log('Deu o POST');
 
-    return new Promise((resolve, reject) => this.http.get(`${API}usuario`, data)
+    return new Promise((resolve, reject) => this.http.post(`${API}usuario`, data)
         .toPromise().then(res => resolve(res), error => reject(error)));
   }
 
