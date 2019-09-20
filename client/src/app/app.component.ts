@@ -1,5 +1,5 @@
 import { AuthGuard } from './guards/auth-guard';
-import { AuthService } from './login/auth.service';
+import { AuthService } from './authentication/login/auth.service';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 
