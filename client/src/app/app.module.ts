@@ -1,4 +1,5 @@
 
+
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,26 +17,28 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { AppRoutingModule, routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './authentication/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PaginaAcessadaComponent } from './pagina-acessada/pagina-acessada.component';
-import { AuthService } from './login/auth.service';
+import { AuthService } from './authentication/login/auth.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
-
+import { CadUsuarioComponent } from './cadastro/parametros/usuarios/cad-usuario/cad-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PaginaAcessadaComponent
+    PaginaAcessadaComponent,
+    CadUsuarioComponent
   ],
   imports: [
     FormsModule,
@@ -56,7 +59,9 @@ import { AngularWebStorageModule } from 'angular-web-storage';
     AngularWebStorageModule,
     HttpClientModule,
     HttpModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FlexLayoutModule,
+    MatFormFieldModule
   ],
   providers: [AuthService, AuthGuard, Validators],
   bootstrap: [AppComponent]
