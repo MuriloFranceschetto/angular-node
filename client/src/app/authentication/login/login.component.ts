@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
   }
 
   voltarHome() {
-    // this.authService.voltarHome();
+    this.router.navigate(['/']);
   }
 
 }

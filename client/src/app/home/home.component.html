@@ -1,0 +1,18 @@
+
+<div class="container">
+    <div fxLayout="row" FxFlex="100" fxLayoutAlign="center">
+        <div fxLayout="row" FxFlex fxLayoutAlign="center">
+            <h1>Você está na Home</h1>
+        </div>
+    </div>
+    <div fxLayout="row" FxFlex="100"  >
+        <div fxLayout="column" fxFlex fxLayoutAlign="center center">
+            <h3>Faça seu login se ja é cadastrado!</h3>
+            <button mat-raised-button color="primary" (click)="goLogin()">Login</button>
+        </div>
+        <div fxLayout="column" fxFlex fxLayoutAlign="center center">
+            <h3>Ainda não está registrado?</h3>
+            <button mat-raised-button color="primary" (click)="goRegistro()">Faça seu Registro</button>
+        </div>
+    </div>
+</div>

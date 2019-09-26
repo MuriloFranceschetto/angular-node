@@ -1,4 +1,5 @@
 
+
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,26 +18,23 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-
+// Módulos dos componentes
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthenticationModule } from './authentication/authentication.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './authentication/login/login.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
-import { CadUsuarioComponent } from './cadastro/parametros/usuarios/cad-usuario/cad-usuario.component';
-
-
-// Módulos dos componentes
-import { AuthenticationRoutingModule } from './authentication/authentication.routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
   ],
   imports: [
     FormsModule,
@@ -59,7 +57,7 @@ import { AuthenticationRoutingModule } from './authentication/authentication.rou
     MatSnackBarModule,
     FlexLayoutModule,
     MatFormFieldModule,
-    AuthenticationRoutingModule,
+    AuthenticationModule,
   ],
   providers: [
     AuthService, 
