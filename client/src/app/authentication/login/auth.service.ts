@@ -2,10 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, NgModule, EventEmitter } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { PaginaAcessadaComponent } from '../../pagina-acessada/pagina-acessada.component';
 import { LocalStorageService, SessionStorageService } from 'angular-web-storage';
 import { CookieService } from 'ngx-cookie-service';
-
 
 const API = 'http://localhost:3000/api/';
 

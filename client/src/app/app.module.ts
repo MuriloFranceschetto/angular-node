@@ -25,8 +25,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './authentication/login/login.component';
-// import { HomeComponent } from './home/home.component';
-import { PaginaAcessadaComponent } from './pagina-acessada/pagina-acessada.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
@@ -39,9 +37,6 @@ import { AuthenticationRoutingModule } from './authentication/authentication.rou
 @NgModule({
   declarations: [
     AppComponent,
-    // HomeComponent,
-    PaginaAcessadaComponent,
-    CadUsuarioComponent,
   ],
   imports: [
     FormsModule,
