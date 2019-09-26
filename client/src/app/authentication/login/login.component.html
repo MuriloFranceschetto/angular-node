@@ -1,18 +1,18 @@
 
 <button mat-raised-button (click)="voltarHome()">voltar para Home</button>
 
-<form class="container" class="alinhamento" [formGroup]="loginForm">
+<form name="loginForm" class="alinhamento" [formGroup]="loginForm">
     <h3>Faça seu login!!!</h3>
 
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Digite seu Email" type="text" id="usuario" formControlName="usuario">
+        <input matInput name="usuario" required formControlName="usuario" placeholder="Digite seu Email">
         <!-- <mat-error *ngIf="usuario.invalid">
             é preciso de um email válido
         </mat-error> -->
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Digite sua senha" type="password" id="senha" formControlName="senha">
+        <input matInput name="senha" required formControlName="senha" placeholder="Digite sua senha">
         <!-- <mat-error *ngIf="senha.invalid">
             É preciso inserir uma senha para fazer o Login!
         </mat-error> -->
@@ -24,8 +24,11 @@
         </mat-card>
     </div> -->
     <br>
-    <button mat-raised-button color="primary" (click)="validaLogin()" [disabled]="loginForm.invalid">
-        Acessar
-    </button>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <button mat-raised-button color="primary" (click)="validaLogin()" [disabled]="loginForm.invalid">
+            Acessar
+        </button>
+        <a [routerLink]="['/auth/singin']">Registrar-se</a>
+    </div>
 </form>
 

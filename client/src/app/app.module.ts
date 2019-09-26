@@ -1,5 +1,4 @@
 
-
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,23 +21,27 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 
-import { AppRoutingModule, routing } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './authentication/login/login.component';
 // import { HomeComponent } from './home/home.component';
 import { PaginaAcessadaComponent } from './pagina-acessada/pagina-acessada.component';
+import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { CadUsuarioComponent } from './cadastro/parametros/usuarios/cad-usuario/cad-usuario.component';
 
+
+// Módulos dos componentes
+import { AuthenticationRoutingModule } from './authentication/authentication.routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     // HomeComponent,
     PaginaAcessadaComponent,
-    CadUsuarioComponent
+    CadUsuarioComponent,
   ],
   imports: [
     FormsModule,
@@ -51,7 +54,6 @@ import { CadUsuarioComponent } from './cadastro/parametros/usuarios/cad-usuario/
     MatInputModule,
     MatListModule,
     MatButtonModule,
-    routing,
     RouterModule,
     MatMenuModule,
     ReactiveFormsModule,
@@ -61,9 +63,15 @@ import { CadUsuarioComponent } from './cadastro/parametros/usuarios/cad-usuario/
     HttpModule,
     MatSnackBarModule,
     FlexLayoutModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AuthenticationRoutingModule,
   ],
-  providers: [AuthGuard, Validators, CookieService],
-  bootstrap: [AppComponent]
-})
+  providers: [
+    AuthService, 
+    CookieService,
+    AuthGuard, 
+    Validators
+  ],
+    bootstrap: [AppComponent]
+  })
 export class AppModule { }

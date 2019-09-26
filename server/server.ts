@@ -11,5 +11,5 @@ import { Database } from './config/database';
 http.createServer(app).listen(3000, () => {
     console.log('Servidor Rodando na Porta 3000!');
 
-    Database.prototype.connection();
+    //Database.prototype.connection();
 });
