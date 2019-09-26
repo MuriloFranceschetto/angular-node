@@ -4,12 +4,9 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
-<<<<<<< HEAD
-import { AuthService } from '../authentication/login/auth.service';
-=======
-import { LoginService } from '../login/login.service';
->>>>>>> e779fb98a563032780700a95b0ab283d44b0196e
+// import { AuthService } from '../authentication/login/auth.service';
 import { LocalStorage } from 'angular-web-storage';
+import { LoginService } from '../authentication/login/auth.service';
 
 @Injectable({
   providedIn: 'root'

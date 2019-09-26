@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 //const express = require('express');
 //const app = express();
 //const router = app.Router();
@@ -25,13 +24,3 @@ export class Routes {
     
 // }
 //module.exports = router;
-=======
-import { Controller } from './api/usuarios/controllers/Usuario.controller';
-
-// Todas as ações relacionada com a rotas de Usuario
-export class Routes {
-    public routes(app) {
-        app.use('/api/usuario', Controller);
-    }
-}
->>>>>>> e779fb98a563032780700a95b0ab283d44b0196e

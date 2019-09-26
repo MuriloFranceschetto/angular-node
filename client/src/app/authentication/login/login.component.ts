@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormControl, Validators, FormGroup} from '@angular/forms';
-import { AuthService } from './auth.service';
+// import { AuthService } from './auth.service';
 import { LoginModel } from './login.model';
 import { LoginService } from './login.service';
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   loginModel = new LoginModel();
 
-  constructor(private authService: AuthService,
+  constructor(
               private loginService: LoginService
     ) { 
  
@@ -49,13 +49,13 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.loginForm.value);
   }
   
-  MostrarLoginHome() {
-    this.authService.MostrarLoginHome();
-  }
+  // MostrarLoginHome() {
+  //   this.authService.MostrarLoginHome();
+  // }
 
-  voltarHome() {
-    this.authService.voltarHome();
-  }
+  // voltarHome() {
+  //   this.authService.voltarHome();
+  // }
 
 }
 

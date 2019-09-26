@@ -26,32 +26,19 @@ import { AppRoutingModule, routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './authentication/login/login.component';
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 import { PaginaAcessadaComponent } from './pagina-acessada/pagina-acessada.component';
-<<<<<<< HEAD
-import { AuthService } from './authentication/login/auth.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { CadUsuarioComponent } from './cadastro/parametros/usuarios/cad-usuario/cad-usuario.component';
-=======
-import { LoginService } from './login/login.service';
-import { AuthGuard } from './guards/auth-guard';
-import { AngularWebStorageModule } from 'angular-web-storage';
-import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
-
->>>>>>> e779fb98a563032780700a95b0ab283d44b0196e
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
+    // HomeComponent,
     PaginaAcessadaComponent,
-<<<<<<< HEAD
     CadUsuarioComponent
-=======
-    CadastroUsuarioComponent,
->>>>>>> e779fb98a563032780700a95b0ab283d44b0196e
   ],
   imports: [
     FormsModule,
@@ -73,14 +60,10 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     HttpClientModule,
     HttpModule,
     MatSnackBarModule,
-<<<<<<< HEAD
     FlexLayoutModule,
     MatFormFieldModule
-=======
-    
->>>>>>> e779fb98a563032780700a95b0ab283d44b0196e
   ],
-  providers: [LoginService, AuthGuard, Validators, CookieService],
+  providers: [AuthGuard, Validators, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
