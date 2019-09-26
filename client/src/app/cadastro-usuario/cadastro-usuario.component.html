@@ -1,0 +1,28 @@
+
+<button mat-raised-button (click)="voltarHome()">voltar para Home</button>
+
+<form [formGroup]="formCadastroUsuario" class="alinhamento container">
+    <h2>Cadastre-se</h2>
+    <div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Digite seu Email"
+                    type="text" id="email" formControlName="email" >
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="example-full-width">
+            <input  matInput placeholder="Digite sua senha"
+                 type="password" id="senha" formControlName="senha">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="example-full-width">
+            <input  matInput placeholder="Digite seu nome"
+                 type="text" id="nome" formControlName="nome">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="cadUsuario()">Cadastrar-se</button>
+
+</form>

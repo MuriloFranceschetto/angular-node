@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { async } from '@angular/core/testing';
 // import { Usuario } from '../cadastros/usuarios/models/Usuario';
 import { config } from './../config/index';
@@ -15,11 +16,29 @@ export class Passport {
                 return res.send(usuarioSession);
             } else {
                 return res.send(null, err);
+=======
+import * as async from 'async';
+import { utils } from '../utils/index';
+import { Database } from '../config/database';
+
+const mongoose = new Database;
+export class Passport {
+    public autenticacao = (req, res) => {
+        console.log('Entrou');
+        this.auth(req.body, (err: any, usuarioSession: UsuarioSession) => {
+            if (usuarioSession) {
+                console.log('DEU BOA')
+                return utils.sendResponse(null, usuarioSession, res);
+            } else {
+                console.log('DEU RUIM')
+                return utils.sendResponse(err, null, res);
+>>>>>>> e779fb98a563032780700a95b0ab283d44b0196e
             }
         });
     }
 
     auth(body: any, cb: Function) {
+<<<<<<< HEAD
         async.waterfall([
             (done: any) => {
                 if (body) {
@@ -70,6 +89,32 @@ export class Passport {
 
 export interface UsuarioSession {
     login: number, // pq number?
+=======
+        // async.waterfall([
+        //     (done: any) => {
+        //         if (body) { // Ajustar para pegar o email do parametro
+        //             mongoose('projetoCerto').model("Database").findOne({ 'acessos.email': body.usuario }, (err: any, user: any) => {
+        //                 if (err) {
+        //                     return done(err, user);
+        //                 }
+        //                 this.validaCredenciais(user, body, (err: string, retorno: any) => {
+        //                     if (err) {
+        //                         return done(err, retorno);
+        //                     }
+        //                     return done(err, retorno);
+        //                 });
+        //             })
+        //         }
+        //     }
+        // ], (err: any, result: any) => {
+        //     cb(err, result);
+        // });
+    }
+}
+
+export interface UsuarioSession {
+    login: number,
+>>>>>>> e779fb98a563032780700a95b0ab283d44b0196e
     nome: string,
     token: string
 }
