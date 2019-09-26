@@ -1,7 +1,8 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Model } from 'mongoose';
 
-export var DataBaseSchemna: Schema = new Schema({
+export var DataBaseSchema: Schema = new Schema({
     name: { type: String, required: true },
+    cpf: { type: String, required: true },
     database: { type: String, required: true },
     acessos: Array({
         nome: { type: String, default: '' },
@@ -10,8 +11,13 @@ export var DataBaseSchemna: Schema = new Schema({
     })
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } });
 
-const Database = model('Database', DataBaseSchemna);
+DataBaseSchema.pre("save", (next) => {
+    console.log('Database salva!');
+    next();
+});
+
+const Database = model('Database', DataBaseSchema);
 
 export {
-    Database
+    Database,
 }

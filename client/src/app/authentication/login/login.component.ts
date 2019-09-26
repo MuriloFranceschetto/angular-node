@@ -1,8 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
-
 import { FormControl, Validators, FormGroup} from '@angular/forms';
-import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../../services/auth.service';
 import { LoginModel } from './login.model';
 import { LoginService } from './login.service';
 
@@ -15,11 +16,16 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginError = false;
+  mensagem = '';
+
   public loginForm: FormGroup;
   loginModel = new LoginModel();
 
-  constructor(private authService: AuthService,
-              private loginService: LoginService
+  constructor(
+              private loginService: LoginService,
+              private authService: AuthService,
+              private router: Router,
     ) { 
  
       }  
@@ -46,15 +52,27 @@ export class LoginComponent implements OnInit {
 
   validaLogin() {
     console.log('Passou pelo component');
-    this.loginService.login(this.loginForm.value);
+    this.loginService.login(this.loginForm.value)
+        .then((response: object) => {
+            if (response) {
+                this.authService.setToken(response);
+                this.router.navigate(['../../pagina-acessada'])
+            } else {
+                this.loginError = true;
+                this.mensagem = 'Usuário ou senha incorretos!';
+            }
+        }).catch((err) => {
+          this.loginError = true;
+          this.mensagem = 'Usuário ou senha incorretos!';
+        });
   }
   
   MostrarLoginHome() {
-    this.authService.MostrarLoginHome();
+    // this.authService.MostrarLoginHome();
   }
 
   voltarHome() {
-    this.authService.voltarHome();
+    // this.authService.voltarHome();
   }
 
 }

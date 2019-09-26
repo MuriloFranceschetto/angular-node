@@ -10,11 +10,9 @@ export class UsuariosModel {
     getForm(): FormGroup {
         let form = new FormGroup({
             nome: new FormControl('', Validators.required),
-            login: new FormControl('', [
-                Validators.required,
-                Validators.email
-            ]),
-            senha: new FormControl('', Validators.required)
+            email: new FormControl('', [ Validators.required, Validators.email ]),
+            senha: new FormControl('', Validators.required),
+            database: new FormControl(),
         });
         return form;
     }

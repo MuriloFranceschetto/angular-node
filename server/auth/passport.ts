@@ -1,3 +1,4 @@
+// import { model } from 'mongoose';
 // import { async } from '@angular/core/testing';
 // import { Usuario } from '../cadastros/usuarios/models/Usuario';
 import { config } from './../config/index';
@@ -12,9 +13,10 @@ export class Passport {
     public autenticacao = (req: any, res: any) => {
         this.auth(req.body, (err: any, usuarioSession: UsuarioSession) => {
             if (usuarioSession) {
+                console.log('Retornou usuarioSession');
                 return res.send(usuarioSession);
             } else {
-                return res.send(null, err);
+                return res.send(err);
             }
         });
     }
@@ -24,10 +26,12 @@ export class Passport {
             (done: any) => {
                 if (body) {
                     dbConn('projetoWeb').model("Database").findOne({ 'acessos.email': body.usuario }, (err: any, user: any) => {
+                        console.log('Buscou Database no banco');
                         if (err) {
                             return done(err, user);
                         }
                         this.validaCredenciais(user, body, (err: string, retorno: any) => {
+                            console.log('Valida credenciais recebeu a busca');
                             if (err) {
                                 return done(err, retorno);
                             }
@@ -45,6 +49,7 @@ export class Passport {
         if (params) {
             // conecta ao usuario na database
             dbConn(params.database).model("Usuario").findOne({ "email": body.usuario }, (err: any, usuario: IUsuario) => {
+                console.log('Buscou Usuário no banco');
                 if (usuario) {
                     if (usuario.senha.toString() == body.senha.toString()) {
                         usuario.database = params.database;

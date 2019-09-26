@@ -16,7 +16,7 @@ export class UsuariosService {
 
     salvar(data?: any) {
         console.log('Deu boa');
-        return new Promise((resolve, reject) => this.http.post(`${API_CONFIG.url}cad/Usuario`, data)
+        return new Promise((resolve, reject) => this.http.post(`${API_CONFIG.url}cad/usuario/`, data)
             .toPromise().then(res => resolve(res), error => reject(error)));
     }
 }

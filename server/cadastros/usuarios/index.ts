@@ -12,7 +12,8 @@ export class RoutesUsuario {
         
         this.router.get('/', this.controller.getAll);
         this.router.get('/:id', this.controller.getUsuarioById);
-        this.router.post('/cad/Usuario', this.controller.cadUsuario);
+        
+        this.router.post('/', this.controller.cadUsuario);
         this.router.put('/usuario/:id', this.controller.editUsuario);
         this.router.delete('/usuario/:id', this.controller.removeUsuario);
     }
