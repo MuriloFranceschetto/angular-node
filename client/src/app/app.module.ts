@@ -1,3 +1,4 @@
+import { PagesModule } from './pages/pages.module';
 
 
 import { RouterModule } from '@angular/router';
@@ -19,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 // Módulos dos componentes
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -30,6 +32,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth-guard';
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { HomeComponent } from './home/home.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatInputModule,
     MatListModule,
+    MatExpansionModule,
     MatButtonModule,
     RouterModule,
     MatMenuModule,
@@ -58,6 +62,7 @@ import { HomeComponent } from './home/home.component';
     FlexLayoutModule,
     MatFormFieldModule,
     AuthenticationModule,
+    PagesModule,
   ],
   providers: [
     AuthService, 
