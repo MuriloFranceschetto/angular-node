@@ -1,7 +1,7 @@
 
-<button mat-raised-button (click)="voltarHome()">voltar para Home</button>
+<button mat-raised-button [routerLink]="['/']">voltar para Home</button>
 
-<form name="loginForm" class="alinhamento" [formGroup]="loginForm">
+<form name="loginForm" class="alinhamento" formGroup="loginForm">
     <h3>Faça seu login!!!</h3>
 
     <mat-form-field class="example-full-width">
@@ -28,7 +28,7 @@
         <button mat-raised-button color="primary" (click)="validaLogin()" [disabled]="loginForm.invalid">
             Acessar
         </button>
-        <a [routerLink]="['/auth/singin']">Registrar-se</a>
+        <a [routerLink]="['/singin']">Registrar-se</a>
     </div>
 </form>
 

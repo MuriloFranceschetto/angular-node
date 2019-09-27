@@ -29,14 +29,6 @@ export class LoginService {
                 this.dados = localStorage.getItem('login');
                }
 
-  validarLogin(data?: any) {
-    
-    console.log('Deu o POST');
-
-    return new Promise((resolve, reject) => this.http.post(`${API}usuario`, data)
-        .toPromise().then(res => resolve(res), error => reject(error)));
-  }
-
   salvaValorAcessado() {
     if (this.dados !== null) {
       this.validacao = true;

@@ -10,7 +10,7 @@ import { AuthenticationRoutingModule } from './authentication/authentication.rou
 import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
-  { path: 'auth', loadChildren: 'app/authentication/authentication.routing.module#AuthenticationRoutingModule' },
+  { path: 'auth', loadChildren: 'app/authentication/authentication.module#AuthenticationModule' },
   { path: '', component: HomeComponent },
   { path: '**', component: AppComponent },
 ];
