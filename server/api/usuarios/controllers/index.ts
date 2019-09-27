@@ -1,5 +1,5 @@
 
-import { express } from 'express';
+import * as express from 'express';
 import { Controller } from './Usuario.controller';
 
 const router = express.Router();
@@ -8,7 +8,6 @@ const controller  = new Controller;
 export class Router {
     
     constructor() {
-        
         router.post('/', controller.cadUsuario);
         router.get('/', controller.getAllUsuario);
         router.get('/:id', controller.getById);
