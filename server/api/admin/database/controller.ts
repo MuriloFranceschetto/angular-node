@@ -1,4 +1,6 @@
 import { Database } from "./model";
+import * as async from 'async';
+import { dbConn } from "../../../config/connect";
 
 export class DataBaseController {
 
@@ -21,6 +23,24 @@ export class DataBaseController {
                 })
             }
             cb((data.length > 0) ? true : false)
+        })
+    }
+
+    async registraConta(req: any, res: any) {
+        console.log('Chegou no controller!');
+        async.waterfall([
+            (done) => {
+                console.log(req.body)
+                dbConn('projetoWeb').model("Database").create(req.body, 
+                    () => done());
+                console.log('Criou registro do usuário!');
+            }
+        ], (err: any) => {
+            if (err) {
+                console.log(err);
+            }
+            console.log('Conta criada com sucesso!');
+            return res.status(200).json({ msg: 'Conta criada com sucesso!' })
         })
     }
 }

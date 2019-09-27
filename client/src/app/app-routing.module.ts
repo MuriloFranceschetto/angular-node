@@ -3,15 +3,14 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // IMPORT PARA AS ROTAS
-// import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { AuthenticationRoutingModule } from './authentication/authentication.routing.module';
-
-import { AuthGuard } from './guards/auth-guard';
+import { RegistroComponent } from './authentication/registro/registro.component';
+import { LoginComponent } from './authentication/login/login.component';
 
 const routes: Routes = [
-  { path: 'auth', loadChildren: 'app/authentication/authentication.routing.module#AuthenticationRoutingModule' },
-  // { path: '', component: HomeComponent },
+  { path: 'auth', loadChildren: './authentication/authentication.routing.module#AuthenticationRoutingModule' },
+  { path: '', component: LoginComponent},
   { path: '**', component: AppComponent },
 ];
 // canActivate: [AuthGuard]
