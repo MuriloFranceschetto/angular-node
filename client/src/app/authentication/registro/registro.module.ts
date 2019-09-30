@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Imports de arquivos
 import { RegistroComponent } from './registro.component';
@@ -23,10 +24,12 @@ import { AuthenticationRoutingModule } from './../authentication.routing.module'
         MatInputModule,
         MatButtonModule,
         FlexLayoutModule,
-        MatDividerModule
+        MatDividerModule,
+        // FormsModule,
+        // ReactiveFormsModule,
     ],
     providers: [
-        RegistroModel
+        RegistroModel,
     ]
     
 })

@@ -1,5 +1,5 @@
 
-import { async } from 'async';
+// import * as async from 'async';
 import { Model } from './Usuario.model';
 
 

@@ -6,10 +6,11 @@ export class RoutesAuth {
     
     private passport = new Passport();
     private router = Router();
-    private DataBaseController = new DataBaseController();
+    private dataBaseController = new DataBaseController();
 
     constructor() {
         this.router.post('/', this.passport.autenticacao);
+        this.router.post('/registro', this.dataBaseController.registraConta);
     }
 
     public routes() {

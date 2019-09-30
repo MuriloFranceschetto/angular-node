@@ -2,42 +2,40 @@
 
 <div class="container" fxLayout="column" fxLayoutAlign="center center">
     <!-- <div class="background-registro" fxLayout="column"> -->
-        <form name="registroForm" (ngSubmit)="cadastro()" formGroup="registroForm" class="registro-form" fxLayoutGap="20px">
-            <div class="title" fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="center center">Cadastro</div>
-            <!-- <div fxFlex="100"><mat-divider></mat-divider></div> -->
-            <div fxLayout="row-wrap" fxLayoutGap="15px">
-                <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>Empresa</mat-label>
-                    <input matInput required formControlName="name" placeholder="Empresa">
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>CPF</mat-label>
-                    <input matInput required formControlName="cpf" placeholder="CPF">
-                </mat-form-field>
-            </div>
-            <div fxLayout="row-wrap" fxLayoutGap="15px">
-                <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>Nome</mat-label>
-                    <input matInput required formControlName="nome" placeholder="Nome">
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>E-mail</mat-label>
-                    <input matInput required formControlName="email" placeholder="E-mail">
-                </mat-form-field>
-            </div>
-            <div fxLayout="row-wrap" fxLayoutGap="15px">
-                <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>Senha</mat-label>
-                    <input matInput required formControlName="senha" placeholder="Senha">
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>Confirmar senha</mat-label>
-                    <input matInput required formControlName="confirmaSenha" placeholder="Confirmar senha">
-                </mat-form-field>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="center center">
-                <button mat-raised-button class="button-submit" style="background-color: orange">Registrar</button>
-            </div>
-        </form>
-    <!-- </div> -->
+    <form name="registroForm" formGroup="registroForm" class="registro-form" fxLayoutGap="20px">
+        <div class="title" fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="center center">Cadastro</div>
+        <div fxLayout="row-wrap" fxLayoutGap="15px">
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>Empresa</mat-label>
+                <input matInput required formControlName="name" placeholder="Empresa">
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>CPF</mat-label>
+                <input matInput required formControlName="cpf" placeholder="CPF">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row-wrap" fxLayoutGap="15px">
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>Nome</mat-label>
+                <input matInput required formControlName="nome" placeholder="Nome">
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>E-mail</mat-label>
+                <input matInput required formControlName="email" placeholder="E-mail">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row-wrap" fxLayoutGap="15px">
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>Senha</mat-label>
+                <input matInput required type="password" formControlName="senha" placeholder="Senha">
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>Confirmar senha</mat-label>
+                <input matInput required type="password" formControlName="confirmaSenha" placeholder="Confirmar senha">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button style="background-color: orange" (click)="cadastro()">Registrar</button>
+        </div>
+    </form>
 </div>

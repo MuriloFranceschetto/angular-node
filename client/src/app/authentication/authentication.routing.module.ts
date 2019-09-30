@@ -10,8 +10,28 @@ const routes: Routes = [
 ];
 
 @NgModule({
+<<<<<<< HEAD
     imports: [ RouterModule.forChild(routes) ],
     exports: [ RouterModule ],
+=======
+    declarations: [
+        LoginComponent,
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        RouterModule.forChild(routes),
+        RegistroModule
+    ],
+    exports: [
+        RouterModule
+    ],
+>>>>>>> release-1.0.0-joaok
 })
 
 export class AuthenticationRoutingModule {
